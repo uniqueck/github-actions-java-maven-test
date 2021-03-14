@@ -30,6 +30,18 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Cache local maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+      - name: save pom.xml
+        uses: actions/cache@v2
+        with:
+          path: pom.xml
+          key: ${{ runner.os }}-pom.xml
       - name: extract set branch as version
         if: ${{ startsWith(github.ref, 'refs/heads/') }}
         run: mvn versions:set -DnewVersion=${GITHUB_REF##*/} versions:commit
@@ -54,6 +66,11 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2
+      - name: restore pom.xml
+        uses: actions/cache@v2
+        with:
+          path: pom.xml
+          key: ${{ runner.os }}-pom.xml
       - name: Build with maven
         run: mvn --batch-mode verify
 
@@ -74,9 +91,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-docs-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-m2-docs
+            ${{ runner.os }}-m2
+      - name: restore pom.xml
+        uses: actions/cache@v2
+        with:
+          path: pom.xml
+          key: ${{ runner.os }}-pom.xml
       - name: Generate docs
         run: mvn --batch-mode org.asciidoctor:asciidoctor-maven-plugin:process-asciidoc@doc-${{ matrix.node }}
       - name: Archive documentation artifacts
