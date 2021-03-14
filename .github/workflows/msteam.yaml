@@ -19,6 +19,7 @@ jobs:
                     \"@type\": \"MessageCard\",
                     \"title\": \"&#x1F4E2; Test Release\",
                     \"text\": \"${content}\",
+                    \"textformat\": \"markdown\",
                     \"potentialAction\": [
                       {
                         \"@type\": \"OpenUri\",
