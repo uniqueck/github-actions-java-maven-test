@@ -7,8 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: send ms teams notification
-        run:
-      - name: prepare release notes
         run: |
           content=$(sed -e 's/:ant:/\&#x1F41B;/g' \
                            -e 's/:package:/\&#x1F4E6;/g' \
