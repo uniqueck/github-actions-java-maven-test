@@ -39,3 +39,8 @@ jobs:
             ${{ runner.os }}-m2-docs
       - name: Generate docs
         run: mvn --batch-mode org.asciidoctor:asciidoctor-maven-plugin:process-asciidoc@doc-${{ matrix.node }}
+      - name: Archive documentation artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: target/generated-docs/${{ matrix.node }}/
