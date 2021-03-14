@@ -29,6 +29,6 @@ jobs:
                       }
                     ]
                   }"
-          curl --location --request POST ${{ secret.MS_TEAMS_WEBHOOK_URI }} \
+          curl --location --request POST ${{ secrets.MS_TEAMS_WEBHOOK_URI }} \
                  --header 'Content-Type: application/json' \
                  --data-raw "${payload}"
