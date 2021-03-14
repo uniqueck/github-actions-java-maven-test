@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: 1.8
       - name: extract branch or tag name
-        run: echo ${{ github.event.ref }}
+        run: mvn versions:set -DnewVersion=${GITHUB_REF##*/} versions:commit
 
   build_and_test:
     runs-on: ubuntu-latest
