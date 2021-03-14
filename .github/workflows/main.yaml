@@ -42,5 +42,5 @@ jobs:
       - name: Archive documentation artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: documentation-${{ matrix.node }}
           path: target/generated-docs/${{ matrix.node }}/
