@@ -18,7 +18,7 @@ jobs:
                     \"@context\": \"https://schema.org/extensions\",
                     \"@type\": \"MessageCard\",
                     \"title\": \"&#x1F4E2; Test Release\",
-                    \"text\": \"${1}\",
+                    \"text\": \"${content}\",
                     \"potentialAction\": [
                       {
                         \"@type\": \"OpenUri\",
