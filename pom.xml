@@ -39,6 +39,7 @@
                             <idprefix/>
                             <idseparator>-</idseparator>
                             <docinfo1>true</docinfo1>
+                            <version>${project.version}</version>
                         </attributes>
                     </configuration>
                     <dependencies>
