@@ -1,11 +1,13 @@
 # What's changed
 
-# :telescope: Features
+## :telescope: Features
 
-# :ant: Bug Fixes
+## :ant: Bug Fixes
 
-# :package: Dependencies updates
+## :package: Dependencies updates
 
-# :broom: Housekeeping
+## :broom: Housekeeping
 
-# :memo: Documentation
+## :memo: Documentation
+
+:telescope: Features
