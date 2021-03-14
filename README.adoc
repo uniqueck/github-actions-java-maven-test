@@ -1,0 +1,24 @@
+= Test repository to use github actions
+
+The following steps are implemented:
+
+* Jobs
+** CI-Artifact
+*** Triggered on push
+*** caches maven repository
+*** compile
+*** execute tests
+*** upload artifacts
+**** target/*.pom
+**** target/*.jar
+
+** CI-Docs
+*** Triggered on push
+*** caches maven repository
+*** build docs
+**** html
+**** pdf
+*** upload artifacts
+**** target/generated-docs
+
+
