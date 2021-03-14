@@ -63,7 +63,7 @@
                             <configuration>
                                 <doctype>book</doctype>
                                 <backend>html5</backend>
-                                <outputDirectory>${project.build.directory}/generated-docs/html</outputDirectory>
+                                <outputDirectory>${project.build.directory}/generated-docs/html5</outputDirectory>
                                 <outputFile>index.html</outputFile>
                             </configuration>
                         </execution>
