@@ -11,6 +11,83 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.2.0</asciidoctorj.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.asciidoctor</groupId>
+                    <artifactId>asciidoctor-maven-plugin</artifactId>
+                    <version>${asciidoctor.maven.plugin.version}</version>
+                    <configuration>
+                        <sourceDirectory>${basedir}/src/docs</sourceDirectory>
+                        <sourceDocumentName>index.adoc</sourceDocumentName>
+                        <attributes>
+                            <imagesdir>./images</imagesdir>
+                            <icons>font</icons>
+                            <sectanchors>true</sectanchors>
+                            <idprefix/>
+                            <idseparator>-</idseparator>
+                            <docinfo1>true</docinfo1>
+                        </attributes>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+                            <artifactId>asciidoctorj</artifactId>
+                            <version>${asciidoctorj.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+                            <artifactId>asciidoctorj-pdf</artifactId>
+                            <version>${asciidoctorj.pdf.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>doc-pdf</id>
+                            <configuration>
+                                <doctype>book</doctype>
+                                <backend>pdf</backend>
+                                <outputDirectory>${project.build.directory}/generated-docs/pdf</outputDirectory>
+                                <outputFile>index.pdf</outputFile>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>doc-html5</id>
+                            <configuration>
+                                <doctype>book</doctype>
+                                <backend>html5</backend>
+                                <outputDirectory>${project.build.directory}/generated-docs/html</outputDirectory>
+                                <outputFile>index.html</outputFile>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>doc-pdf</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <executions>
+
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
