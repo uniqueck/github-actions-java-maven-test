@@ -22,6 +22,6 @@ jobs:
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
           summary: "test from github actions"
-          text: ${{ steps.release-notes.outputs.content }}
+          text: "${{ steps.release-notes.outputs.content }}"
           title: "&#x1F4E2; Github Actions title"
 
