@@ -16,15 +16,18 @@ jobs:
         run: mvn versions:set -DnewVersion=${GITHUB_REF##*/v} versions:commit
       - name: build release
         run: mvn --batch-mode verify
+      - name: tag name
+        id: tag_name
+        run: |
+          echo ::set-output name=TAG_NAME::${GITHUB_REF#refs/tags/}
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_NAME: "${GITHUB_REF##*/}"
         with:
           tag_name: ${{ github.ref }}
-          name: Release ${{ github.event.release.tag_name }}
+          name: Release ${{ steps.tag_name.outputs.tag_name }}
           body_path: release-notes.md
           draft: false
           prerelease: false
