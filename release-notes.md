@@ -9,5 +9,3 @@
 ## :broom: Housekeeping
 
 ## :memo: Documentation
-
-:telescope: Features
