@@ -30,7 +30,7 @@ jobs:
             ./target/github-actions-java-maven-test.jar
       - name: send ms teams notification
         run: |
-          releaseUri=${{ steps.create_release.outputs.url }}
+          releaseUri="${{ steps.create_release.outputs.url }}"
           content=$(sed -e 's/:ant:/\&#x1F41B;/g' \
                            -e 's/:package:/\&#x1F4E6;/g' \
                            -e 's/:telescope:/\&#x1F52D;/g' \
