@@ -1,3 +1,5 @@
 ifndef::version[:version: 1.0.0-SNAPSHOT]
 = Example
 version: {version}
+
+Content follows here.
