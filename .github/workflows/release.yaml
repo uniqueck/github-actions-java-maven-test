@@ -45,7 +45,7 @@ jobs:
           payload="{
                     \"@context\": \"https://schema.org/extensions\",
                     \"@type\": \"MessageCard\",
-                    \"title\": \"&#x1F4E2; Test Release\",
+                    \"title\": \"&#x1F4E2; ${{ steps.tag_name.outputs.tag_name }} Release\",
                     \"text\": \"${content}\",
                     \"markdown\": true,
                     \"potentialAction\": [
