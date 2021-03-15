@@ -24,6 +24,7 @@ jobs:
           INPUT_NAME: "${GITHUB_REF##*/}"
         with:
           tag_name: ${{ github.ref }}
+          name: Release ${{ github.event.release.tag_name }}
           body_path: release-notes.md
           draft: false
           prerelease: false
