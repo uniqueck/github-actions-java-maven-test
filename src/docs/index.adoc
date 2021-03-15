@@ -3,3 +3,4 @@ ifndef::version[:version: 1.0.0-SNAPSHOT]
 version: {version}
 
 Content follows here.
+New content goes here.
