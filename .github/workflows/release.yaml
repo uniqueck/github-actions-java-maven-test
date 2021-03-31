@@ -12,6 +12,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - name: install npm
+        run: npm install
+      - name: run npm release
+        run: npm release
       - name: set tag as version
         run: mvn versions:set -DnewVersion=${GITHUB_REF##*/v} versions:commit
       - name: build release
