@@ -16,6 +16,8 @@ jobs:
         run: mvn versions:set -DnewVersion=${GITHUB_REF##*/v} versions:commit
       - name: build release
         run: mvn --batch-mode verify
+      - name: git status
+        run: git status
       - name: git config
         run: |
           git config user.name "${GITHUB_ACTOR}"
