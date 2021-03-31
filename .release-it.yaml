@@ -3,3 +3,4 @@ github:
 
 git:
   requireCleanWorkingDir: false
+  requireUpstream: false
