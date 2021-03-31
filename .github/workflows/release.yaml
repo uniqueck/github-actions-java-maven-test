@@ -19,7 +19,9 @@ jobs:
       - name: install npm
         run: npm install
       - name: run npm release
-        run: npm release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: set tag as version
         run: mvn versions:set -DnewVersion=${GITHUB_REF##*/v} versions:commit
       - name: build release
