@@ -1,11 +1,30 @@
 # What's changed
 
-## :telescope: Features
+## [Unreleased]
 
-## :ant: Bug Fixes
+## [0.0.21] - 2021-04-05
 
-## :package: Dependencies updates
+### :telescope: Features
 
-## :broom: Housekeeping
+* new feature
+* another new feature
 
-## :memo: Documentation
+### :ant: Bug Fixes
+
+### :package: Dependencies updates
+
+### :broom: Housekeeping
+
+### :memo: Documentation
+
+## [0.0.20] - 2021-04-05 
+
+### :telescope: Features
+
+### :ant: Bug Fixes
+
+### :package: Dependencies updates
+
+### :broom: Housekeeping
+
+### :memo: Documentation
