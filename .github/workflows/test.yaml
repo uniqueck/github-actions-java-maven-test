@@ -1,7 +1,10 @@
-on: push
+on: [push, workflow_dispatch]
 
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/debug-action@v2
+      - uses: benc-uk/workflow-dispatch@v1
+        with:
+          repo: rulebased-group/lfet-test-driver-maven-groovy
+          workflow: "CI"
