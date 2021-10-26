@@ -1,0 +1,7 @@
+on: push
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo toJson(github)
