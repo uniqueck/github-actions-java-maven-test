@@ -4,4 +4,4 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo toJson(github)
+      - uses: hmarr/debug-action@v2
