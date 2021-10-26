@@ -8,3 +8,4 @@ jobs:
         with:
           repo: rulebased-group/lfet-test-driver-maven-groovy
           workflow: "CI"
+          token: ${{ secrets.GITHUB_TOKEN }}
